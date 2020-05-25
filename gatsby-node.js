@@ -1,7 +1,7 @@
 const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  /*const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/layouts/post.js`)
   const result = await graphql(`
   query MyQuery {
@@ -23,5 +23,5 @@ exports.createPages = async ({ graphql, actions }) => {
           slug:article.slug,
         },
       })
-    })
+    }) */
 }
