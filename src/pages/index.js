@@ -1,21 +1,47 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+import Image from 'gatsby-image'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const ContentWrapper = styled.div`
+  width:60%;
+  text-align:right;
+  height:calc(100vh - 210px);
+  h1{
+    font-size:78px;
+  }
+  p{
+    font-size:22px;
+  }
+`
+const ImageWrapper = styled(Image)`
+  position:absolute !important;
+  top:0;
+  right:0;
+  object-fit:cover;
+  width:35%;
+  height:100vh;
+`
+const IndexPage = ({data}) => (
+  <main>
+  <ContentWrapper>
+    <h1>Guru-Utvikling</h1>
+    <p>Hello this is our new Guru WEBSITE !!!</p>
+  </ContentWrapper>
+  </main>
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
 )
 
+/*export const query = graphql`
+  {
+    file(name: {eq: "clay-banks"}) {
+      childImageSharp {
+        fluid(maxWidth: 800, maxHeight: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`*/
 export default IndexPage
