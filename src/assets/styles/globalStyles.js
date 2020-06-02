@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const GlobalStyle = createGlobalStyle`
     html{
         box-sizing:border-box;
@@ -11,13 +11,13 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         
-        font-family:'Montserrat';
+        font-family:'Proxima Nova';
         text-align:center;
     }
     button{
         padding:0;
         cursor: pointer;
-        font-family:'Montserrat'
+        font-family:'Proxima Nova'
     }
     ul{
         padding:0;

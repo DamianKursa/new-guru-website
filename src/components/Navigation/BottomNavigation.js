@@ -11,11 +11,16 @@ const NavbarContainer = styled(Navbar)`
 background-color:#478094;
 height:55px;
 `
+const NavbarContainerWrapper = styled(Container)`
+  @media (min-width: 992px) {display:none;}
+  @media (min-width: 1200px) {display:none; }
+
+`
 const HomeIconWrapper = styled(HomeIcon)`
   margin-bottom:2rem;
 `
 const BottomNavigation = () => (
-    <Container xs={12}>
+    <NavbarContainerWrapper xs={12}>
       <NavbarContainer fixed="bottom">
         <Col>
         <Link>
@@ -28,7 +33,7 @@ const BottomNavigation = () => (
           </Link>
         </Col>
         <Col xs={4}>
-         <Link>
+         <Link to="/">
           <HomeIconWrapper/>
          </Link>
         </Col>
@@ -43,7 +48,7 @@ const BottomNavigation = () => (
           </Link>
         </Col>
       </NavbarContainer>
-    </Container>
+    </NavbarContainerWrapper>
   )
   
   export default BottomNavigation
