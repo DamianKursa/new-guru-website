@@ -11,7 +11,7 @@ const ArticlesWrapperPage = styled.div`
 
 `
 
-const ArticlesPage = ({ data }) => {
+const ArticlesPage = () => {
   //const {allDatoCmsArticle:{nodes}} = data
   return(
     <ArticlesWrapperPage>

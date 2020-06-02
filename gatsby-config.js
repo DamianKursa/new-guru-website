@@ -27,13 +27,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    {
+   /* {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `articles`,
         path: `${__dirname}/src/data/articles`,
       },
-    },  
+    }, */ 
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -41,6 +41,15 @@ module.exports = {
         // section of your administrative area:
         apiToken:process.env.API_DATO_CMS
       },
+      
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
     },
     `gatsby-transformer-sharp`,
     'gatsby-background-image',

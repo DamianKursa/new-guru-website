@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="86" viewBox="0 0 86 86">
+  <defs>
+    <filter id="Ellipse_4" x="0" y="0" width="86" height="86" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="home-icon" transform="translate(-145 -581)">
+    <g transform="matrix(1, 0, 0, 1, 145, 581)" filter="url(#Ellipse_4)">
+      <circle id="Ellipse_4-2" data-name="Ellipse 4" cx="34" cy="34" r="34" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="Group_8" data-name="Group 8" transform="translate(-2961 -3969)">
+      <path id="Icon_awesome-home" data-name="Icon awesome-home" d="M12.435,7.408,4.257,14.143v7.269a.71.71,0,0,0,.71.71l4.97-.013a.71.71,0,0,0,.706-.71V17.154a.71.71,0,0,1,.71-.71h2.839a.71.71,0,0,1,.71.71V21.4a.71.71,0,0,0,.71.712l4.968.014a.71.71,0,0,0,.71-.71V14.138l-8.175-6.73A.541.541,0,0,0,12.435,7.408Zm12.917,4.578L21.644,8.929V2.786a.532.532,0,0,0-.532-.532H18.628a.532.532,0,0,0-.532.532v3.22L14.125,2.739a2.129,2.129,0,0,0-2.705,0L.192,11.985a.532.532,0,0,0-.071.75L1.252,14.11a.532.532,0,0,0,.75.072L12.435,5.589a.541.541,0,0,1,.679,0l10.433,8.593a.532.532,0,0,0,.75-.071l1.131-1.375a.532.532,0,0,0-.075-.751Z" transform="translate(3136.551 4577.725)" fill="#e2a05f"/>
+    </g>
+  </g>
+</svg>

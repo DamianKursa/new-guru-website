@@ -4,17 +4,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from 'gatsby-image'
 
-const ContentWrapper = styled.div`
-  width:60%;
-  text-align:right;
-  height:calc(100vh - 210px);
-  h1{
-    font-size:78px;
-  }
-  p{
-    font-size:22px;
-  }
-`
+
 const ImageWrapper = styled(Image)`
   position:absolute !important;
   top:0;
@@ -25,10 +15,6 @@ const ImageWrapper = styled(Image)`
 `
 const IndexPage = ({data}) => (
   <main>
-  <ContentWrapper>
-    <h1>Guru-Utvikling</h1>
-    <p>Hello this is our new Guru WEBSITE !!!</p>
-  </ContentWrapper>
   </main>
 
 )
