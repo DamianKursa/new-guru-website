@@ -1,53 +1,68 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { Container,Row,Col,Navbar } from 'react-bootstrap'
+import { Container,Col,Navbar,Nav,Link } from 'react-bootstrap'
 import Logo from '../../assets/images/guru-utvikling-logo.svg'
-import BookingIcon from '../../assets/images/booking-icon.svg'
+import Menu from '../Menu/Menu'
+import MenuIcon from '../../assets/images/menu-hamburger.svg'
+import BookMeetingButton from '../Navigation/BookMeetingButton'
+/*STYLES*/
 const GuruLogo = styled(Logo)`
     padding:0;
     margin:0;
 `
-const TopNavbarContainer = styled(Navbar)`
-    padding:0;
-    -webkit-box-shadow: 0px 6px 6px 0px rgba(209,209,209,.3);
-    -moz-box-shadow: 0px 6px 6px 0px rgba(209,209,209,.3);
-    box-shadow: 0px 6px 6px 0px rgba(209,209,209,.3);
-    background:white;
-    @media (min-width: 992px) {box-shadow:none;}
-    @media (min-width: 1200px) {box-shadow:none; }
-
+const StyledMenuIcon = styled(MenuIcon)`
+    stroke:#4E4C4C;
+    width: 32px;
+    height:32px;
+    margin-left:2rem;
 `
-const MeetingButton = styled.button`
-    background-color:#E2A05F;
-    outline:none;
-    border:none;
-    height:45px;
-    width:70px;
-`
-const BookingButtonWrapper = styled(Col)`
+const GuruLogoWraper = styled(Col)`
     display:flex;
-    justify-content:flex-end;
-    align-items:center;
 `
-const TopNavigation = () => (
-    <Container>
-        <TopNavbarContainer fixed='top' >
-        <Col>
-            <Link>
-                <GuruLogo/>
-            </Link>
-        </Col>
-        <BookingButtonWrapper>
-            <MeetingButton>
-                <BookingIcon/>
-            </MeetingButton>
-        </BookingButtonWrapper>
+const TopNavbarContainer = styled(Container)`
+    padding:0;
+    background:white;
+    @media (max-width: 992px) {display:none;}
+
+`
+const StyledNavigation = styled(Nav)`
+   justify-content:flex-end;
+   align-items:baseline;
+`
+/*METHODS*/
+
+const TopNavigation = () => {
+    const [showMenu, setShowMenu] = useState(false)
+    
+    const toggleMenu = () =>{
+        setShowMenu(!showMenu);
+    }
+
+    return(
+        <>
+        <TopNavbarContainer fluid>
+            <Navbar  sticky="top" bg="light">
+                <GuruLogoWraper>
+                    <Navbar.Brand  href="#">
+                        <GuruLogo></GuruLogo>
+                    </Navbar.Brand>
+                </GuruLogoWraper>
+                <Col>
+                    <StyledNavigation>
+                        <Nav.Link href="#">
+                            <BookMeetingButton/>
+                        </Nav.Link>
+                        <Nav.Link href="#">
+                            <StyledMenuIcon onClick={toggleMenu}/>
+                        </Nav.Link>
+                    </StyledNavigation>
+                </Col>
+            </Navbar>
         </TopNavbarContainer>
-
-
-    </Container>
-  )
-  
+        {showMenu ? <Menu/> : ''}
+        </>
+        )
+}
+ 
   export default TopNavigation
   

@@ -6,8 +6,7 @@ import Image from 'gatsby-image'
 import { Container,Row,Col } from "react-bootstrap"
 
 const MainPageWrapper = styled(Container)`
-  height:100vh;
-
+  height:90vh;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -17,13 +16,13 @@ const TextColorChange = styled.span`
 `
 const StyledPara = styled.p`
   color:#5E6061;
-  font-size:14px;
+  font-size:1.2rem;
   text-align:left;
   margin-top: 1rem;
 `
 const HeaderTitle = styled.h1`
   font-weight:700;
-  font-size:25px;
+  font-size:3rem;
   text-align:left;
   padding:0;
   margin:0;
@@ -35,7 +34,7 @@ const CTAButton = styled.button`
   outline:none;
   border: 1px solid #E2A05F;
   text-transform:uppercase;
-  font-size: 12px;
+  font-size: 0.8rem;
   width:150px;
   height:45px;
   font-weight:bold;
@@ -47,14 +46,13 @@ const StyledMainTextColumn = styled(Col)`
   flex-direction:column;
 `
 const IndexPage = () => (
-  <MainPageWrapper>
+  <MainPageWrapper fluid>
     <Row>
       <StyledMainTextColumn xs={{span:10,offset:1}}>
         <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
         <StyledPara>Vi blir kjent med dine styrker og svakheter i din digitale synlighet. Vi blir enige om hvor vårt samarbeid skal ha fokus.</StyledPara>
         <CTAButton>Les mer</CTAButton>
       </StyledMainTextColumn>
-
     </Row>
   </MainPageWrapper>
 )
