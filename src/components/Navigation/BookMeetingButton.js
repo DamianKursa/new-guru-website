@@ -20,9 +20,14 @@ const MeetingButton = styled.button`
     }
 `
 const BookMeetingButton = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(windowSize);
+  
+  let windowSize
   const updateWidthAndHeight = () =>{
-    setWidth(window.innerWidth)
+  if (typeof window !== 'undefined') {
+    windowSize = window.innerWidth
+      setWidth(windowSize)
+  }
   }
   useEffect(() => {
     window.addEventListener("resize", updateWidthAndHeight);
