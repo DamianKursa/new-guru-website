@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
+import SmallBookingIcon from '../../assets/images/booking-icon.svg'
 
 const MeetingButton = styled.button`
     background-color:#E2A05F;
@@ -13,11 +14,23 @@ const MeetingButton = styled.button`
     -webkit-box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     -moz-box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
+    @media (max-width: 992px) {
+      height:45px;
+      width:98px;
+    }
 `
 const BookMeetingButton = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const updateWidthAndHeight = () =>{
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize", updateWidthAndHeight);
+    return () => window.removeEventListener("resize", updateWidthAndHeight);
+});
   return (
     <MeetingButton>
-      BOOK ET MØTE
+      {width <= 992 ? <SmallBookingIcon/> : "BOOK ET MØTE"}
     </MeetingButton>
   )
 }

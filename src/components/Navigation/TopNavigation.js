@@ -15,6 +15,9 @@ const StyledMenuIcon = styled(MenuIcon)`
     width: 32px;
     height:32px;
     margin-left:2rem;
+    @media (max-width: 992px){
+        display:none
+    }
 `
 const GuruLogoWraper = styled(Col)`
     display:flex;
@@ -22,7 +25,6 @@ const GuruLogoWraper = styled(Col)`
 const TopNavbarContainer = styled(Container)`
     padding:0;
     background:white;
-    @media (max-width: 992px) {display:none;}
 
 `
 const StyledNavigation = styled(Nav)`

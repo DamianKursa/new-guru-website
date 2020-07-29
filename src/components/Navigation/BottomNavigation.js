@@ -24,7 +24,7 @@ const BottomNavigation = () => (
       <NavbarContainer fixed="bottom">
         <Col>
         <Link>
-          <HamburgerIcon width={24} />
+          <HamburgerIcon stroke="#fff"width={24} />
         </Link>
         </Col>
         <Col>
