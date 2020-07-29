@@ -20,9 +20,9 @@ const MeetingButton = styled.button`
     }
 `
 const BookMeetingButton = () => {
+  let windowSize
   const [width, setWidth] = useState(windowSize);
   
-  let windowSize
   const updateWidthAndHeight = () =>{
   if (typeof window !== 'undefined') {
     windowSize = window.innerWidth
