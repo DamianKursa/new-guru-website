@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import {Container, Row, Col, Navbar} from 'react-bootstrap';
-import HamburgerIcon from '../../assets/images/menu-hamburger.svg'
+import Hamburger from '../Navigation/Hamburger'
 import PhoneIcon from '../../assets/images/phone-icon.svg'
 import LocationIcon from '../../assets/images/location-mark.svg'
 import MailIcon from '../../assets/images/mail-icon.svg'
@@ -20,14 +20,14 @@ const HomeIconWrapper = styled(HomeIcon)`
   margin-bottom:2rem;
 `
 const BottomNavigation = () => (
-    <NavbarContainerWrapper xs={12}>
+  <>
+    <NavbarContainerWrapper>
       <NavbarContainer fixed="bottom">
         <Col>
-        <Link>
-          <HamburgerIcon stroke="#fff"width={24} />
-        </Link>
+          <Hamburger/>
         </Col>
-        <Col>
+
+        <Col >
           <Link>
             <PhoneIcon width={24} />
           </Link>
@@ -37,18 +37,19 @@ const BottomNavigation = () => (
           <HomeIconWrapper/>
          </Link>
         </Col>
-        <Col>
+        <Col  >
           <Link>
             <LocationIcon width={24}/>
           </Link>
         </Col>
-        <Col>
+        <Col >
           <Link>
             <MailIcon />
           </Link>
         </Col>
       </NavbarContainer>
     </NavbarContainerWrapper>
+    </>
   )
   
   export default BottomNavigation

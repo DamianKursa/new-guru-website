@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment,useState } from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import styled from "styled-components"
@@ -108,6 +108,7 @@ const IndexPage = () => (
               </Row>
             </MainPageWrapperServices>
           </div>
+          {}
         </ReactFullpage.Wrapper>
       );
     }}

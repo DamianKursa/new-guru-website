@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
 import { Container,Col,Navbar,Nav,Link } from 'react-bootstrap'
 import Logo from '../../assets/images/guru-utvikling-logo.svg'
-import Menu from '../Menu/Menu'
+import Hamburger from './Hamburger'
 import MenuIcon from '../../assets/images/menu-hamburger.svg'
 import BookMeetingButton from '../Navigation/BookMeetingButton'
 /*STYLES*/
@@ -12,6 +12,11 @@ const GuruLogo = styled(Logo)`
     @media (max-width: 692px){
         width: 100px;
         height:34px;
+    }
+`
+const HamburgerWrapperDesktop = styled.div`
+    @media (max-width: 992px){
+        display:none
     }
 `
 const StyledMenuIcon = styled(MenuIcon)`
@@ -39,12 +44,7 @@ const StyledNavigation = styled(Nav)`
 `
 /*METHODS*/
 
-const TopNavigation = () => {
-    const [showMenu, setShowMenu] = useState(false)
-    
-    const toggleMenu = () =>{
-        setShowMenu(!showMenu);
-    }
+const TopNavigation = (props) => {
 
     return(
         <>
@@ -60,14 +60,15 @@ const TopNavigation = () => {
                         <Nav.Link href="#">
                             <BookMeetingButton/>
                         </Nav.Link>
-                        <Nav.Link href="#">
-                            <StyledMenuIcon onClick={toggleMenu}/>
-                        </Nav.Link>
                     </StyledNavigation>
                 </Col>
+                <HamburgerWrapperDesktop>
+                    <Hamburger/>
+                </HamburgerWrapperDesktop>
+
             </Navbar>
         </TopNavbarContainer>
-        {showMenu ? <Menu/> : ''}
+
         </>
         )
 }
