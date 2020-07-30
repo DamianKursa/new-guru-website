@@ -26,6 +26,13 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration:none;
     }
+    .scroll-secions{
+        height:100vh;
+        /*padding:5rem 1rem 1rem 1rem;*/
+        display:flex;
+        align-items:center;
+
+    }
 `
 
 export default GlobalStyle

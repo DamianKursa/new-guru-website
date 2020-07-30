@@ -11,7 +11,7 @@ const GuruLogo = styled(Logo)`
     margin:0;
     @media (max-width: 692px){
         width: 100px;
-        height:24px;
+        height:34px;
     }
 `
 const StyledMenuIcon = styled(MenuIcon)`
@@ -28,7 +28,9 @@ const GuruLogoWraper = styled(Col)`
 `
 const TopNavbarContainer = styled(Container)`
     padding:0;
-    background:white;
+    background:rgba(255,255,255,0.9);
+    position:absolute;
+    top:0;
 
 `
 const StyledNavigation = styled(Nav)`
@@ -47,7 +49,7 @@ const TopNavigation = () => {
     return(
         <>
         <TopNavbarContainer fluid>
-            <Navbar  sticky="top" bg="light">
+            <Navbar  sticky="top" bg="white">
                 <GuruLogoWraper>
                     <Navbar.Brand  href="#">
                         <GuruLogo></GuruLogo>

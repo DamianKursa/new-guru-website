@@ -3,12 +3,18 @@ import TopNavigation from '../components/Navigation/TopNavigation'
 import BottomNavigation from '../components/Navigation/BottomNavigation'
 import GlobalStyle from '../assets/styles/globalStyles'
 const MainLayout = ({children}) => (
-    <main >
+  <main>
+    <GlobalStyle />
+    <TopNavigation />
+    {children}
+    <BottomNavigation />
+  </main>
+  /*  <main >
       <GlobalStyle />
       <TopNavigation />
       {children}
       <BottomNavigation />
-    </main>
+    </main>*/
   )
 
   export default MainLayout

@@ -7,8 +7,8 @@ import { Container,Row,Col } from "react-bootstrap"
 import ReactFullpage from '@fullpage/react-fullpage';
 
 const MainPageWrapper = styled(Container)`
-  height:100vh;
   display:flex;
+  height:100vh;
   justify-content:center;
   align-items:center;
   background-image:url('/clay-banks.jpg');
@@ -22,14 +22,20 @@ const StyledPara = styled.p`
   font-size:1.2rem;
   text-align:left;
   margin-top: 1rem;
+  @media (max-width: 487px) {
+    font-size:1rem;
+  }
 `
 const HeaderTitle = styled.h1`
   font-weight:700;
-  font-size:3rem;
+  font-size:2.5rem;
   text-align:left;
   padding:0;
   margin:0;
   color:#478094;
+  @media (max-width: 487px) {
+    font-size:2rem;
+  }
 `
 const CTAButton = styled.button`
   background-color:#E2A05F;
@@ -47,36 +53,29 @@ const StyledMainTextColumn = styled(Col)`
   justify-content:flex-start;
   display:flex;
   flex-direction:column;
-  background-color:#fff;
-  border-radius:20px;
-  padding :3rem;
-
 `
 
 const MainPageWrapperLatestWork =styled(Container)`
   background-color:#478094;
-  height:100vh;
 `
 const MainPageWrapperBlog =styled(Container)`
   background-color:#fff;
-  height:100vh;
 `
 const MainPageWrapperServices =styled(Container)`
   background-color:#E2A05F;
-  height:100vh;
 `
 
 const IndexPage = () => (
 
   <ReactFullpage
     //fullpage options
-    scrollingSpeed = {800}
+    scrollingSpeed = {600}
 
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
-          <div className="section">
-          <MainPageWrapper fluid>
+          <div className="section ">
+          <MainPageWrapper className="scroll-secions" fluid>
               <Row>
                 <StyledMainTextColumn xs={{span:10,offset:1}}>
                   <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
@@ -87,7 +86,7 @@ const IndexPage = () => (
             </MainPageWrapper>
           </div>
           <div className="section">
-            <MainPageWrapperLatestWork fluid>
+            <MainPageWrapperLatestWork className="scroll-secions" fluid>
               <Row>
                 <h1>LatestWork</h1>
               </Row>
@@ -95,7 +94,7 @@ const IndexPage = () => (
           </div>
 
           <div className="section">
-            <MainPageWrapperBlog fluid>
+            <MainPageWrapperBlog className="scroll-secions" fluid>
               <Row>
                 <h1>Blog</h1>
               </Row>
@@ -103,7 +102,7 @@ const IndexPage = () => (
           </div>
 
           <div className="section">
-            <MainPageWrapperServices fluid>
+            <MainPageWrapperServices className="scroll-secions" fluid>
               <Row>
                 <h1>Services</h1>
               </Row>

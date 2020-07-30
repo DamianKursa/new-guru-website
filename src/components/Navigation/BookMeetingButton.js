@@ -14,8 +14,8 @@ const MeetingButton = styled.button`
     -webkit-box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     -moz-box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
-    @media (max-width: 992px) {
-      height:25px;
+    @media (max-width: 487px) {
+      height:30px;
       width:49px;
     }
 `
@@ -31,6 +31,9 @@ const BookMeetingButton = () => {
   }
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+        setWidth(window.innerWidth)
+    }
     window.addEventListener("resize", updateWidthAndHeight);
     return () => window.removeEventListener("resize", updateWidthAndHeight);
 });
