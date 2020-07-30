@@ -4,12 +4,14 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from 'gatsby-image'
 import { Container,Row,Col } from "react-bootstrap"
+import ReactFullpage from '@fullpage/react-fullpage';
 
 const MainPageWrapper = styled(Container)`
-  height:90vh;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
+  background-image:url('/clay-banks.jpg');
 `
 const TextColorChange = styled.span`
   color:#87BDCB;
@@ -45,16 +47,69 @@ const StyledMainTextColumn = styled(Col)`
   display:flex;
   flex-direction:column;
 `
+
+const MainPageWrapperLatestWork =styled(Container)`
+background-color:#478094;
+height:100vh;
+`
+const MainPageWrapperBlog =styled(Container)`
+background-color:#478051;
+height:100vh;
+`
+const MainPageWrapperServices =styled(Container)`
+background-color:#345061;
+height:100vh;
+`
+
 const IndexPage = () => (
-  <MainPageWrapper fluid>
-    <Row>
-      <StyledMainTextColumn xs={{span:10,offset:1}}>
-        <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
-        <StyledPara>Vi blir kjent med dine styrker og svakheter i din digitale synlighet. Vi blir enige om hvor vårt samarbeid skal ha fokus.</StyledPara>
-        <CTAButton>Les mer</CTAButton>
-      </StyledMainTextColumn>
-    </Row>
-  </MainPageWrapper>
+
+  <ReactFullpage
+    //fullpage options
+    scrollingSpeed = {800}
+
+    render={({ state, fullpageApi }) => {
+      return (
+        <ReactFullpage.Wrapper>
+          <div className="section">
+          <MainPageWrapper fluid>
+              <Row>
+                <StyledMainTextColumn xs={{span:10,offset:1}}>
+                  <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
+                  <StyledPara>Vi blir kjent med dine styrker og svakheter i din digitale synlighet. Vi blir enige om hvor vårt samarbeid skal ha fokus.</StyledPara>
+                  <CTAButton>Les mer</CTAButton>
+                </StyledMainTextColumn>
+              </Row>
+            </MainPageWrapper>
+          </div>
+          <div className="section">
+            <MainPageWrapperLatestWork fluid>
+              <Row>
+                <h1>LatestWork</h1>
+              </Row>
+            </MainPageWrapperLatestWork>
+          </div>
+
+          <div className="section">
+            <MainPageWrapperBlog fluid>
+              <Row>
+                <h1>Blog</h1>
+              </Row>
+            </MainPageWrapperBlog>
+          </div>
+
+          <div className="section">
+            <MainPageWrapperServices fluid>
+              <Row>
+                <h1>Services</h1>
+              </Row>
+            </MainPageWrapperServices>
+          </div>
+        </ReactFullpage.Wrapper>
+      );
+    }}
+  />
+  /*
+ */
 )
 
 /*export const query = graphql`

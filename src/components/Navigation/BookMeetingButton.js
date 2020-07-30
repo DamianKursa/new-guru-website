@@ -24,11 +24,12 @@ const BookMeetingButton = () => {
   const [width, setWidth] = useState(windowSize);
   
   const updateWidthAndHeight = () =>{
-  if (typeof window !== 'undefined') {
-    windowSize = window.innerWidth
-      setWidth(windowSize)
+    if (typeof window !== 'undefined') {
+      windowSize = window.innerWidth
+        setWidth(windowSize)
+    }
   }
-  }
+
   useEffect(() => {
     window.addEventListener("resize", updateWidthAndHeight);
     return () => window.removeEventListener("resize", updateWidthAndHeight);
