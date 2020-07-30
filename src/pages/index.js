@@ -12,6 +12,7 @@ const MainPageWrapper = styled(Container)`
   justify-content:center;
   align-items:center;
   background-image:url('/clay-banks.jpg');
+  background-size:cover;
 `
 const TextColorChange = styled.span`
   color:#87BDCB;
@@ -31,8 +32,8 @@ const HeaderTitle = styled.h1`
   color:#478094;
 `
 const CTAButton = styled.button`
-  background-color:white;
-  color:#E2A05F;
+  background-color:#E2A05F;
+  color:#fff;
   outline:none;
   border: 1px solid #E2A05F;
   text-transform:uppercase;
@@ -46,19 +47,23 @@ const StyledMainTextColumn = styled(Col)`
   justify-content:flex-start;
   display:flex;
   flex-direction:column;
+  background-color:#fff;
+  border-radius:20px;
+  padding :3rem;
+
 `
 
 const MainPageWrapperLatestWork =styled(Container)`
-background-color:#478094;
-height:100vh;
+  background-color:#478094;
+  height:100vh;
 `
 const MainPageWrapperBlog =styled(Container)`
-background-color:#478051;
-height:100vh;
+  background-color:#fff;
+  height:100vh;
 `
 const MainPageWrapperServices =styled(Container)`
-background-color:#345061;
-height:100vh;
+  background-color:#E2A05F;
+  height:100vh;
 `
 
 const IndexPage = () => (

@@ -9,6 +9,10 @@ import BookMeetingButton from '../Navigation/BookMeetingButton'
 const GuruLogo = styled(Logo)`
     padding:0;
     margin:0;
+    @media (max-width: 692px){
+        width: 100px;
+        height:24px;
+    }
 `
 const StyledMenuIcon = styled(MenuIcon)`
     stroke:#4E4C4C;

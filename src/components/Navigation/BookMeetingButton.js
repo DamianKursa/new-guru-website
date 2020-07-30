@@ -15,8 +15,8 @@ const MeetingButton = styled.button`
     -moz-box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     box-shadow: 0px 0px 17px -2px rgba(163,163,163,1);
     @media (max-width: 992px) {
-      height:45px;
-      width:98px;
+      height:25px;
+      width:49px;
     }
 `
 const BookMeetingButton = () => {
