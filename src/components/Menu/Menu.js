@@ -43,10 +43,10 @@ const Menu = ({open}) => {
     <MenuWrapper open={open} >
       <Col xs={12} md={{ span: 4, offset:5 }} lg={12}>
       <StyledNavigationMenu>
-          <StyledNavLink href="#">Guru</StyledNavLink>
+          <StyledNavLink href="/">Guru</StyledNavLink>
           <StyledNavLink href="#">Projects</StyledNavLink>
           <StyledNavLink href="#">What we do</StyledNavLink>
-          <StyledNavLink href="#">Clients cases</StyledNavLink>
+          <StyledNavLink href="/client-cases">Clients cases</StyledNavLink>
           <StyledNavLink href="#">Get in touch with us</StyledNavLink>
           <StyledNavLink href="#">
               <BookMeetingButton/>

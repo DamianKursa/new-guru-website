@@ -5,6 +5,8 @@ import styled from "styled-components"
 import Image from 'gatsby-image'
 import { Container,Row,Col } from "react-bootstrap"
 import ReactFullpage from '@fullpage/react-fullpage';
+import {useSpring, animated} from 'react-spring'
+import Articlespreview from '../components/ArticlesPreview/Articlespreview'
 
 const MainPageWrapper = styled(Container)`
   display:flex;
@@ -17,7 +19,7 @@ const MainPageWrapper = styled(Container)`
 const TextColorChange = styled.span`
   color:#87BDCB;
 `
-const StyledPara = styled.p`
+const StyledPara = styled(animated.p)`
   color:#5E6061;
   font-size:1.2rem;
   text-align:left;
@@ -26,7 +28,7 @@ const StyledPara = styled.p`
     font-size:1rem;
   }
 `
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled(animated.h1)`
   font-weight:700;
   font-size:2.5rem;
   text-align:left;
@@ -37,7 +39,7 @@ const HeaderTitle = styled.h1`
     font-size:2rem;
   }
 `
-const CTAButton = styled.button`
+const CTAButton = styled(animated.button)`
   background-color:#E2A05F;
   color:#fff;
   outline:none;
@@ -49,7 +51,7 @@ const CTAButton = styled.button`
   font-weight:bold;
   margin-top:.3rem;
 `
-const StyledMainTextColumn = styled(Col)`
+const StyledMainTextColumn = styled(animated.div)`
   justify-content:flex-start;
   display:flex;
   flex-direction:column;
@@ -65,23 +67,32 @@ const MainPageWrapperServices =styled(Container)`
   background-color:#E2A05F;
 `
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const props = useSpring({
+    to: {opacity: 1, color: '#ffaaee'},
+    from: {opacity: 0, color: 'red'},
+    delay: 1000
+  })
 
+return(
   <ReactFullpage
     //fullpage options
     scrollingSpeed = {600}
-
     render={({ state, fullpageApi }) => {
+      
       return (
         <ReactFullpage.Wrapper>
           <div className="section ">
           <MainPageWrapper className="scroll-secions" fluid>
               <Row>
-                <StyledMainTextColumn xs={{span:10,offset:1}}>
-                  <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
-                  <StyledPara>Vi blir kjent med dine styrker og svakheter i din digitale synlighet. Vi blir enige om hvor vårt samarbeid skal ha fokus.</StyledPara>
-                  <CTAButton>Les mer</CTAButton>
-                </StyledMainTextColumn>
+                <Col xs={{span:10,offset:1}}>
+                  <StyledMainTextColumn style={props}>
+                    <HeaderTitle>Vi hjelper deg gjennom den <TextColorChange>digitale skogen!</TextColorChange></HeaderTitle>
+                    <StyledPara>Vi blir kjent med dine styrker og svakheter i din digitale synlighet. Vi blir enige om hvor vårt samarbeid skal ha fokus.</StyledPara>
+                    <CTAButton>Les mer</CTAButton>
+                  </StyledMainTextColumn>
+                </Col>
+
               </Row>
             </MainPageWrapper>
           </div>
@@ -89,6 +100,7 @@ const IndexPage = () => (
             <MainPageWrapperLatestWork className="scroll-secions" fluid>
               <Row>
                 <h1>LatestWork</h1>
+                <Articlespreview />
               </Row>
             </MainPageWrapperLatestWork>
           </div>
@@ -108,14 +120,15 @@ const IndexPage = () => (
               </Row>
             </MainPageWrapperServices>
           </div>
-          {}
         </ReactFullpage.Wrapper>
       );
     }}
   />
+)
+  
   /*
  */
-)
+}
 
 /*export const query = graphql`
   {

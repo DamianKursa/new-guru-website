@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
 import SmallBookingIcon from '../../assets/images/booking-icon.svg'
-
-const MeetingButton = styled.button`
+import {useSpring, animated} from 'react-spring'
+const MeetingButton = styled(animated.button)`
     background-color:#E2A05F;
     outline:none;
     border:none;
@@ -20,6 +20,10 @@ const MeetingButton = styled.button`
     }
 `
 const BookMeetingButton = () => {
+  const props = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  })
   let windowSize
   const [width, setWidth] = useState(windowSize);
   
@@ -38,7 +42,7 @@ const BookMeetingButton = () => {
     return () => window.removeEventListener("resize", updateWidthAndHeight);
 });
   return (
-    <MeetingButton>
+    <MeetingButton style={props}>
       {width <= 992 ? <SmallBookingIcon/> : "BOOK ET MØTE"}
     </MeetingButton>
   )

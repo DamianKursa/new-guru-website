@@ -7,11 +7,10 @@ const ArticlesWrapperPage = styled.div`
   display: flex;
   justify-items:center;
   align-items:center;
-  flex-direction:column;
-
+  height:100vh;
 `
 
-const ArticlesPage = () => {
+const clientCases = () => {
   //const {allDatoCmsArticle:{nodes}} = data
   return(
     <ArticlesWrapperPage>
@@ -33,5 +32,5 @@ const ArticlesPage = () => {
         }
       }
     }` */
-  export default ArticlesPage
+  export default clientCases
   
