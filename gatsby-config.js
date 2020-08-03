@@ -12,7 +12,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Montserrat`,
+            family: `Proxima Nova`,
             variants:[`400`,`600`,`700`],
           },
         ],

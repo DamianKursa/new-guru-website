@@ -13,7 +13,7 @@ const MainPageWrapper = styled(Container)`
   height:100vh;
   justify-content:center;
   align-items:center;
-  background-image:url('/clay-banks.jpg');
+  /*background-image:url('/clay-banks.jpg');*/
   background-size:cover;
 `
 const TextColorChange = styled.span`

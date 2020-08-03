@@ -44,10 +44,10 @@ const Menu = ({open}) => {
       <Col xs={12} md={{ span: 4, offset:5 }} lg={12}>
       <StyledNavigationMenu>
           <StyledNavLink href="/">Guru</StyledNavLink>
-          <StyledNavLink href="#">Projects</StyledNavLink>
-          <StyledNavLink href="#">What we do</StyledNavLink>
+          <StyledNavLink href="/latest-work">Latest work</StyledNavLink>
+          <StyledNavLink href="/about-us">What we do</StyledNavLink>
           <StyledNavLink href="/client-cases">Clients cases</StyledNavLink>
-          <StyledNavLink href="#">Get in touch with us</StyledNavLink>
+          <StyledNavLink href="/contact">Get in touch with us</StyledNavLink>
           <StyledNavLink href="#">
               <BookMeetingButton/>
           </StyledNavLink>
