@@ -7,17 +7,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-layout`,
-    {
+    /*{
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
-            family: `Proxima Nova`,
+            family: `Monttserat`,
             variants:[`400`,`600`,`700`],
           },
         ],
       },
-    },
+    },*/
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
